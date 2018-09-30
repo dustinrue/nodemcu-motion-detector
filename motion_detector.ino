@@ -1,7 +1,7 @@
 
 // HC-SR501 Pir
 #define MQTT_TOPIC "home/motion/garage"
-#define MQTT_CLIENT "ESP8266 Motion Sensor 2"
+#define MQTT_CLIENT_NAME "ESP8266 Motion Sensor 2"
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -10,7 +10,6 @@
 const char* ssid     = SSID;
 const char* password = PASS;
 const char* mqtt     = MQTT;
-
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -23,7 +22,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    if (client.connect(MQTT_CLIENT)) {
+    if (client.connect(MQTT_CLIENT_NAME)) {
       Serial.println("connected");
     } 
     else {
