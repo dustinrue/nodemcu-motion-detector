@@ -1,7 +1,10 @@
 
 // HC-SR501 Pir
-#define MQTT_TOPIC "home/motion/garage"
-#define MQTT_CLIENT_NAME "ESP8266 Motion Sensor 2"
+
+#define MQTT_TOPIC       "home/motion/garage"
+#define MQTT_SERVER      "192.168.86.253";
+#define MQTT_CLIENT_NAME "ESP8266 Motion Sensor 1"
+
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -36,7 +39,6 @@ void reconnect() {
 }
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
   pinMode(Sensor, INPUT);
 
